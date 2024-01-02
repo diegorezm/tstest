@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node ./dist/index.js",
     "dev": "tsc && node ./dist/index.js",
-    "test": "jest"
+    "test": "jest --silent"
   },
   "keywords": [],
   "author": "",
