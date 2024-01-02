@@ -21,13 +21,17 @@ export class ShoppingCart  implements ShoppingCartProtocol{
   totalWithDiscount(discount: number){
     return this.discount.calculate(this.total(),discount);
   }
+  
+  get items(){
+    return this._items;
+  }
 
   clear() {
     this._items.length = 0;
   }
 
   isEmpty(): boolean {
-    return this._items.length > 0;
+    return this._items.length  === 0;
   }
 
   toString(){

@@ -18,7 +18,7 @@ export class Order {
   }
 
   checkout() {
-    if (!this.cart.isEmpty) {
+    if (this.cart.isEmpty()) {
       console.log("Your shopping cart is empty!");
       return;
     }
