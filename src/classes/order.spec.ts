@@ -78,4 +78,18 @@ describe("Order", () => {
     expect(persistSpy).toHaveBeenCalledTimes(1);
   });
 
+  it("Checking clear if cart is not empty" ,() => {
+    const {sut, shoppingCart}  = createSut();
+    shoppingCart.addItem({name: "tshirt", price: 40});
+    const shoppingSpy = jest.spyOn(shoppingCart, "clear");
+    sut.checkout();
+    expect(shoppingSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it("Checking clear if cart is empty" ,() => {
+    const {sut, shoppingCart}  = createSut();
+    const shoppingSpy = jest.spyOn(shoppingCart, "clear");
+    sut.checkout();
+    expect(shoppingSpy).toHaveBeenCalledTimes(0);
+  });
 });
